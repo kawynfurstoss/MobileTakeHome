@@ -18,6 +18,7 @@
 		6924CC7C2C88FCCB00CB9E7C /* AsyncThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC7B2C88FCCB00CB9E7C /* AsyncThumbnailView.swift */; };
 		6924CC7F2C890A8D00CB9E7C /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC7E2C890A8D00CB9E7C /* FileType.swift */; };
 		6924CC822C8914A500CB9E7C /* BottomModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC812C8914A500CB9E7C /* BottomModal.swift */; };
+		6924CC842C89180B00CB9E7C /* AlbumModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC832C89180B00CB9E7C /* AlbumModal.swift */; };
 		69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */; };
 		69B5790B2C8827B3008A92C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790A2C8827B3008A92C6 /* Assets.xcassets */; };
 		69B5790E2C8827B3008A92C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790D2C8827B3008A92C6 /* Preview Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		6924CC7B2C88FCCB00CB9E7C /* AsyncThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncThumbnailView.swift; sourceTree = "<group>"; };
 		6924CC7E2C890A8D00CB9E7C /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		6924CC812C8914A500CB9E7C /* BottomModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomModal.swift; sourceTree = "<group>"; };
+		6924CC832C89180B00CB9E7C /* AlbumModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModal.swift; sourceTree = "<group>"; };
 		69B579032C8827B2008A92C6 /* MobileTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTakeHomeApp.swift; sourceTree = "<group>"; };
 		69B5790A2C8827B3008A92C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				6924CC732C88F18D00CB9E7C /* SearchBarView.swift in Sources */,
 				69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */,
 				69B579472C88527E008A92C6 /* AlbumsService.swift in Sources */,
+				6924CC842C89180B00CB9E7C /* AlbumModal.swift in Sources */,
 				6924CC6F2C88E87700CB9E7C /* AlbumsResponse.swift in Sources */,
 				69B579432C884BA9008A92C6 /* AlbumsView.swift in Sources */,
 				6924CC822C8914A500CB9E7C /* BottomModal.swift in Sources */,
