@@ -15,6 +15,7 @@
 		69B579222C8827B4008A92C6 /* MobileTakeHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579212C8827B4008A92C6 /* MobileTakeHomeUITests.swift */; };
 		69B579242C8827B4008A92C6 /* MobileTakeHomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579232C8827B4008A92C6 /* MobileTakeHomeUITestsLaunchTests.swift */; };
 		69B579322C8839D8008A92C6 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 69B579312C8839D8008A92C6 /* ComposableArchitecture */; };
+		69B5793C2C88470E008A92C6 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B5793B2C88470E008A92C6 /* CapsuleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		69B5791D2C8827B4008A92C6 /* MobileTakeHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTakeHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B579212C8827B4008A92C6 /* MobileTakeHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTakeHomeUITests.swift; sourceTree = "<group>"; };
 		69B579232C8827B4008A92C6 /* MobileTakeHomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTakeHomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69B5793B2C88470E008A92C6 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		69B579052C8827B2008A92C6 /* MobileTakeHome */ = {
 			isa = PBXGroup;
 			children = (
+				69B579382C8846BA008A92C6 /* ComponentsPackage */,
 				69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */,
 				69B579082C8827B2008A92C6 /* ContentView.swift */,
 				69B5790A2C8827B3008A92C6 /* Assets.xcassets */,
@@ -127,6 +130,22 @@
 				69B579232C8827B4008A92C6 /* MobileTakeHomeUITestsLaunchTests.swift */,
 			);
 			path = MobileTakeHomeUITests;
+			sourceTree = "<group>";
+		};
+		69B579382C8846BA008A92C6 /* ComponentsPackage */ = {
+			isa = PBXGroup;
+			children = (
+				69B5793D2C884789008A92C6 /* Buttons */,
+			);
+			path = ComponentsPackage;
+			sourceTree = "<group>";
+		};
+		69B5793D2C884789008A92C6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				69B5793B2C88470E008A92C6 /* CapsuleButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +286,7 @@
 			files = (
 				69B579092C8827B2008A92C6 /* ContentView.swift in Sources */,
 				69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */,
+				69B5793C2C88470E008A92C6 /* CapsuleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
