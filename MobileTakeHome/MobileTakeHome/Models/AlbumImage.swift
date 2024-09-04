@@ -8,4 +8,9 @@
 struct AlbumImage: Identifiable, Equatable, Codable  {
     var id: String
     var imageLink: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case imageLink = "link"
+    }
 }
