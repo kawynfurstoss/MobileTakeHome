@@ -12,11 +12,13 @@ struct AlbumsFeature {
     @ObservableState
     struct State: Equatable {
         var albums: IdentifiedArrayOf<Album>
+        var selectedAlbum: Album?
         var isLoading: Bool = false
     }
     enum Action {
         case queryAlbums(String)
         case albumsQueried(Result<IdentifiedArrayOf<Album>, Error>)
+        case albumTapped(Album)
     }
     
     @Dependency(\.albumService) var albumService
@@ -39,6 +41,9 @@ struct AlbumsFeature {
                 return .none
             case let .albumsQueried(.failure(error)):
                 state.isLoading = false
+                return .none
+            case let .albumTapped(album):
+                state.selectedAlbum = album
                 return .none
             }
         }

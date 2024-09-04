@@ -10,6 +10,7 @@ import ComposableArchitecture
 
 struct AlbumsView: View {
     @Bindable var store: StoreOf<AlbumsFeature>
+    @State var isBottomModalShowing: Bool = false
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -23,9 +24,16 @@ struct AlbumsView: View {
                         if let image = album.images.first?.imageLink {
                             if let imageUrl = URL(string: image) {
                                 AsyncThumbnailView(url: imageUrl, width: width)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            store.send(.albumTapped(album))
+                                            isBottomModalShowing = true
+                                        }
+                                    }
                             }
                         }
                     }
+                    
                 }
             }
             
@@ -34,6 +42,19 @@ struct AlbumsView: View {
             })
             .padding(.top, Padding.extraLarge * 3)
         }
+        .modifier(BottomModalModifier(
+            shouldDisplay: $isBottomModalShowing,
+            onDismissed: {
+                withAnimation {
+                    isBottomModalShowing = false
+                }
+            }
+        ) {
+            AlbumModal(album: store.selectedAlbum) {
+                // TODO: Navigate to View Album
+            }
+        }
+        )
     }
 }
 
