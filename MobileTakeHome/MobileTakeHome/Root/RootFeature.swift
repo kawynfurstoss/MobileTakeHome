@@ -6,7 +6,6 @@
 //
 
 import ComposableArchitecture
-import UIKit
 
 @Reducer
 struct RootFeature {
