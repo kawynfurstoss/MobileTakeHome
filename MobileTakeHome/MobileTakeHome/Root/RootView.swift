@@ -12,11 +12,14 @@ struct RootView: View {
     @Bindable var store: StoreOf<RootFeature>
 
     var body: some View {
-        CapsuleButton(
-            label: store.placeholder,
-            onTapped: {
-                store.send(.buttonTapped)
+        VStack {
+            CapsuleButton(
+                label: store.placeholder,
+                onTapped: {
+                    store.send(.buttonTapped)
             })
+            AlbumsView(store: store.scope(state: \.albums, action: \.albums))
+        }
     }
 }
 

@@ -10,11 +10,13 @@ import ComposableArchitecture
 @Reducer
 struct RootFeature {
     @ObservableState
-    struct State: Equatable { 
+    struct State: Equatable {
         var placeholder: String = "foo"
+        var albums = AlbumsFeature.State()
     }
     enum Action {
         case buttonTapped
+        case albums(AlbumsFeature.Action)
     }
     
     var body: some ReducerOf<Self> {
@@ -27,7 +29,12 @@ struct RootFeature {
                 }
                 state.placeholder = "bar"
                 return .none
+            case .albums(_):
+                return .none
             }
+        }
+        Scope(state: \.albums, action: \.albums) {
+            AlbumsFeature()
         }
     }
 }
