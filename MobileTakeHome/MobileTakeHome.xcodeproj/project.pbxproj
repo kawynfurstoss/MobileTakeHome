@@ -17,6 +17,8 @@
 		69B579352C883C35008A92C6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579342C883C35008A92C6 /* RootView.swift */; };
 		69B579372C883C46008A92C6 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579362C883C46008A92C6 /* RootFeature.swift */; };
 		69B5793C2C88470E008A92C6 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B5793B2C88470E008A92C6 /* CapsuleButton.swift */; };
+		69B579412C884B98008A92C6 /* AlbumsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579402C884B98008A92C6 /* AlbumsFeature.swift */; };
+		69B579432C884BA9008A92C6 /* AlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579422C884BA9008A92C6 /* AlbumsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		69B579342C883C35008A92C6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		69B579362C883C46008A92C6 /* RootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
 		69B5793B2C88470E008A92C6 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
+		69B579402C884B98008A92C6 /* AlbumsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsFeature.swift; sourceTree = "<group>"; };
+		69B579422C884BA9008A92C6 /* AlbumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		69B579052C8827B2008A92C6 /* MobileTakeHome */ = {
 			isa = PBXGroup;
 			children = (
+				69B5793E2C884B77008A92C6 /* Features */,
 				69B579382C8846BA008A92C6 /* ComponentsPackage */,
 				69B579332C883B70008A92C6 /* Root */,
 				69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */,
@@ -157,6 +162,23 @@
 				69B5793B2C88470E008A92C6 /* CapsuleButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		69B5793E2C884B77008A92C6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				69B5793F2C884B82008A92C6 /* Albums */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		69B5793F2C884B82008A92C6 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				69B579402C884B98008A92C6 /* AlbumsFeature.swift */,
+				69B579422C884BA9008A92C6 /* AlbumsView.swift */,
+			);
+			path = Albums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +319,10 @@
 			files = (
 				69B579372C883C46008A92C6 /* RootFeature.swift in Sources */,
 				69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */,
+				69B579432C884BA9008A92C6 /* AlbumsView.swift in Sources */,
 				69B5793C2C88470E008A92C6 /* CapsuleButton.swift in Sources */,
 				69B579352C883C35008A92C6 /* RootView.swift in Sources */,
+				69B579412C884B98008A92C6 /* AlbumsFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
