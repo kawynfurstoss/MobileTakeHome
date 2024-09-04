@@ -51,7 +51,7 @@ struct AlbumsView: View {
                 }
             ) {
                 AlbumModal(album: store.selectedAlbum) {
-                    // TODO: Navigate to View Album
+                    store.send(.navigateToAlbumGallery)
                 }
             }
             )

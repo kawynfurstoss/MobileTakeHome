@@ -21,6 +21,7 @@ struct AlbumsFeature {
         case queryAlbums(String)
         case albumsQueried(Result<IdentifiedArrayOf<Album>, Error>)
         case albumTapped(Album)
+        case navigateToAlbumGallery
         case destination(PresentationAction<Destination.Action>)
         case path(StackAction<Path.State, Path.Action>)
     }
@@ -49,6 +50,12 @@ struct AlbumsFeature {
             case let .albumTapped(album):
                 state.selectedAlbum = album
                 return .none
+            case .navigateToAlbumGallery:
+                guard let album = state.selectedAlbum else {
+                    return .none
+                }
+                state.path.append(.albumGallery(AlbumGalleryFeature.State(album: album)))
+                return .none
             case .destination:
                     return .none
             case .path:
@@ -59,6 +66,7 @@ struct AlbumsFeature {
         .forEach(\.path, action: \.path)
     }
 }
+
 extension AlbumsFeature {
     @Reducer(state: .equatable)
     enum Destination {
