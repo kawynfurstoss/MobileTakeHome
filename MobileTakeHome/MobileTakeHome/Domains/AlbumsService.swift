@@ -32,21 +32,31 @@ struct AlbumService {
 }
 
 extension AlbumService: DependencyKey {
-  static let liveValue = Self(
-    queryAlbums: { query in
-      return AlbumsServiceMockData.mockData
-  },
-    fetchRandomAlbums: {
-        return AlbumsServiceMockData.mockData
-    })
+    static var liveValue: Self {
+        @Dependency(\.networkingClient) var networkingClient
+        return Self(
+            queryAlbums: { query in
+                guard let response = try await networkingClient.send(ImgurAPI.queryAlbums(query: query), AlbumsResponse.self) as? AlbumsResponse else {
+                    throw NetworkingError.decodingFailed
+                }
+                return response.albums
+            },
+            fetchRandomAlbums: {
+                guard let response = try await networkingClient.send(ImgurAPI.getGallery, AlbumsResponse.self) as? AlbumsResponse else {
+                    throw NetworkingError.decodingFailed
+                }
+                return response.albums
+            })
+    }
     
-  static let previewValue = Self(
-    queryAlbums: { query in
-      return AlbumsServiceMockData.mockData
-  },
-    fetchRandomAlbums: {
-        return AlbumsServiceMockData.mockData
-    })
+    
+    static let previewValue = Self(
+        queryAlbums: { query in
+            return AlbumsServiceMockData.mockData
+        },
+        fetchRandomAlbums: {
+            return AlbumsServiceMockData.mockData
+        })
     
     static let testValue = Self(
         queryAlbums: unimplemented("AlbumService.queryAlbums"),
@@ -55,25 +65,25 @@ extension AlbumService: DependencyKey {
 
 
 extension DependencyValues {
-  var albumService: AlbumService {
-    get { self[AlbumService.self] }
-    set { self[AlbumService.self] = newValue }
-  }
+    var albumService: AlbumService {
+        get { self[AlbumService.self] }
+        set { self[AlbumService.self] = newValue }
+    }
 }
 
 class AlbumsServiceMockData {
     static var mockData: IdentifiedArrayOf<Album> {
         // Sample data
         let albumImages: [AlbumImage] = [
-          AlbumImage(id: "1", imageLink: "https://picsum.photos/200/300"),
-          AlbumImage(id: "2", imageLink: "https://picsum.photos/200/300")
+            AlbumImage(id: "1", imageLink: "https://picsum.photos/200/300"),
+            AlbumImage(id: "2", imageLink: "https://picsum.photos/200/300")
         ]
         let albums: [Album] = [
-          Album(id: "1", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages)),
-          Album(id: "2", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages)),
-          Album(id: "3", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages))
+            Album(id: "1", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages)),
+            Album(id: "2", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages)),
+            Album(id: "3", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages))
         ]
-
+        
         // Creating an IdentifiedArray from the array
         let identifiedAlbums = IdentifiedArrayOf(uniqueElements: albums)
         return identifiedAlbums
