@@ -15,6 +15,8 @@
 		6924CC712C88F13B00CB9E7C /* SquareGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC702C88F13B00CB9E7C /* SquareGridView.swift */; };
 		6924CC732C88F18D00CB9E7C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC722C88F18D00CB9E7C /* SearchBarView.swift */; };
 		6924CC762C88F22B00CB9E7C /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC752C88F22B00CB9E7C /* Padding.swift */; };
+		6924CC7C2C88FCCB00CB9E7C /* AsyncThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC7B2C88FCCB00CB9E7C /* AsyncThumbnailView.swift */; };
+		6924CC7F2C890A8D00CB9E7C /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC7E2C890A8D00CB9E7C /* FileType.swift */; };
 		69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */; };
 		69B5790B2C8827B3008A92C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790A2C8827B3008A92C6 /* Assets.xcassets */; };
 		69B5790E2C8827B3008A92C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790D2C8827B3008A92C6 /* Preview Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		6924CC702C88F13B00CB9E7C /* SquareGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGridView.swift; sourceTree = "<group>"; };
 		6924CC722C88F18D00CB9E7C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		6924CC752C88F22B00CB9E7C /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
+		6924CC7B2C88FCCB00CB9E7C /* AsyncThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncThumbnailView.swift; sourceTree = "<group>"; };
+		6924CC7E2C890A8D00CB9E7C /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		69B579032C8827B2008A92C6 /* MobileTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTakeHomeApp.swift; sourceTree = "<group>"; };
 		69B5790A2C8827B3008A92C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +134,14 @@
 			path = Styling;
 			sourceTree = "<group>";
 		};
+		6924CC7D2C890A7E00CB9E7C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6924CC7E2C890A8D00CB9E7C /* FileType.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		69B578FA2C8827B2008A92C6 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +165,7 @@
 		69B579052C8827B2008A92C6 /* MobileTakeHome */ = {
 			isa = PBXGroup;
 			children = (
+				6924CC7D2C890A7E00CB9E7C /* Utilities */,
 				6924CC632C88D5F200CB9E7C /* NetworkingPackage */,
 				69B579482C885301008A92C6 /* Models */,
 				69B579442C88521E008A92C6 /* Domains */,
@@ -207,6 +220,7 @@
 				69B5793D2C884789008A92C6 /* Buttons */,
 				6924CC722C88F18D00CB9E7C /* SearchBarView.swift */,
 				6924CC702C88F13B00CB9E7C /* SquareGridView.swift */,
+				6924CC7B2C88FCCB00CB9E7C /* AsyncThumbnailView.swift */,
 			);
 			path = ComponentsPackage;
 			sourceTree = "<group>";
@@ -393,6 +407,7 @@
 				69B579372C883C46008A92C6 /* RootFeature.swift in Sources */,
 				6924CC672C88D69000CB9E7C /* APIEndpoint.swift in Sources */,
 				6924CC692C88D8A800CB9E7C /* NetworkingErrors.swift in Sources */,
+				6924CC7C2C88FCCB00CB9E7C /* AsyncThumbnailView.swift in Sources */,
 				69B5794C2C8853CA008A92C6 /* AlbumImage.swift in Sources */,
 				6924CC732C88F18D00CB9E7C /* SearchBarView.swift in Sources */,
 				69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */,
@@ -406,6 +421,7 @@
 				69B579412C884B98008A92C6 /* AlbumsFeature.swift in Sources */,
 				6924CC712C88F13B00CB9E7C /* SquareGridView.swift in Sources */,
 				69B5794A2C885349008A92C6 /* Album.swift in Sources */,
+				6924CC7F2C890A8D00CB9E7C /* FileType.swift in Sources */,
 				6924CC762C88F22B00CB9E7C /* Padding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
