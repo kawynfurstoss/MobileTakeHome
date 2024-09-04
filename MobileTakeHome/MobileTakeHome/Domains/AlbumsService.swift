@@ -30,3 +30,52 @@ struct AlbumService {
     /// - Throws: An error if the request fails.
     var fetchRandomAlbums: @Sendable () async throws -> IdentifiedArrayOf<Album>
 }
+
+extension AlbumService: DependencyKey {
+  static let liveValue = Self(
+    queryAlbums: { query in
+      return AlbumsServiceMockData.mockData
+  },
+    fetchRandomAlbums: {
+        return AlbumsServiceMockData.mockData
+    })
+    
+  static let previewValue = Self(
+    queryAlbums: { query in
+      return AlbumsServiceMockData.mockData
+  },
+    fetchRandomAlbums: {
+        return AlbumsServiceMockData.mockData
+    })
+    
+    static let testValue = Self(
+        queryAlbums: unimplemented("AlbumService.queryAlbums"),
+        fetchRandomAlbums: unimplemented("AlbumService.fetchInitialAlbums"))
+}
+
+
+extension DependencyValues {
+  var albumService: AlbumService {
+    get { self[AlbumService.self] }
+    set { self[AlbumService.self] = newValue }
+  }
+}
+
+class AlbumsServiceMockData {
+    static var mockData: IdentifiedArrayOf<Album> {
+        // Sample data
+        let albumImages: [AlbumImage] = [
+          AlbumImage(id: "1", imageLink: "https://picsum.photos/200/300"),
+          AlbumImage(id: "2", imageLink: "https://picsum.photos/200/300")
+        ]
+        let albums: [Album] = [
+          Album(id: "1", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages)),
+          Album(id: "2", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages)),
+          Album(id: "3", link: "example.com", images: IdentifiedArrayOf(uniqueElements: albumImages))
+        ]
+
+        // Creating an IdentifiedArray from the array
+        let identifiedAlbums = IdentifiedArrayOf(uniqueElements: albums)
+        return identifiedAlbums
+    }
+}
