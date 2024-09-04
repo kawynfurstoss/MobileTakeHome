@@ -10,15 +10,18 @@ import ComposableArchitecture
 
 struct AlbumsView: View {
     @Bindable var store: StoreOf<AlbumsFeature>
-
+    
     var body: some View {
         VStack {
-            ForEach(store.albums) { album in
-                Text(album.id)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(8)
-                    .foregroundColor(.white)
+            GeometryReader { geometry in
+                let width = geometry.size.width / 3
+                SquareGridView(items: store.albums.elements, columnWidth: width) { album in
+                    if let image = album.images.first?.imageLink {
+                        if let imageUrl = URL(string: image) {
+                            AsyncThumbnailView(url: imageUrl, width: width)
+                        }
+                    }
+                }
             }
         }
     }
