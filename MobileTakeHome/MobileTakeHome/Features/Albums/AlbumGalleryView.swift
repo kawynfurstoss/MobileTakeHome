@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct AlbumView: View {
+struct AlbumGalleryView: View {
     let store: StoreOf<AlbumGalleryFeature>
     
   var body: some View {
