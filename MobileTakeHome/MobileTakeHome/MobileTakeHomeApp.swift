@@ -25,7 +25,7 @@ struct MobileTakeHomeApp: App {
                 ProgressView("Loading...") // Show a loading indicator
                     .task {
                         do {
-                            initialAlbums = try await albumService.fetchRandomAlbums()
+                            initialAlbums = try await albumService.queryAlbums("cats")
                             isDataLoaded = true
                         } catch {
                             // TODO: Implement Error Handling
