@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct MobileTakeHomeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView(store: Store(initialState: RootFeature.State())
+                     { RootFeature() }
+            )
         }
     }
 }
