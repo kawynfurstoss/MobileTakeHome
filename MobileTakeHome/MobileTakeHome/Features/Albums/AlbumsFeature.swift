@@ -14,11 +14,15 @@ struct AlbumsFeature {
         var albums: IdentifiedArrayOf<Album>
         var selectedAlbum: Album?
         var isLoading: Bool = false
+        @Presents var destination: Destination.State?
+        var path = StackState<Path.State>()
     }
     enum Action {
         case queryAlbums(String)
         case albumsQueried(Result<IdentifiedArrayOf<Album>, Error>)
         case albumTapped(Album)
+        case destination(PresentationAction<Destination.Action>)
+        case path(StackAction<Path.State, Path.Action>)
     }
     
     @Dependency(\.albumService) var albumService
@@ -45,7 +49,24 @@ struct AlbumsFeature {
             case let .albumTapped(album):
                 state.selectedAlbum = album
                 return .none
+            case .destination:
+                    return .none
+            case .path:
+                    return .none
             }
         }
+        .ifLet(\.$destination, action: \.destination)
+        .forEach(\.path, action: \.path)
+    }
+}
+extension AlbumsFeature {
+    @Reducer(state: .equatable)
+    enum Destination {
+      case albumGallery(AlbumGalleryFeature)
+    }
+    
+    @Reducer(state: .equatable)
+    enum Path {
+        case albumGallery(AlbumGalleryFeature)
     }
 }
