@@ -13,11 +13,12 @@ struct AlbumsView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            if store.isLoading {
-                ProgressView("Loading...")
-            } else {
-                GeometryReader { geometry in
-                    let width = geometry.size.width / 3
+            GeometryReader { geometry in
+                let width = geometry.size.width / 3
+                if store.isLoading {
+                    ProgressView("Loading...")
+                        .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                } else {
                     SquareGridView(items: store.albums.elements, columnWidth: width) { album in
                         if let image = album.images.first?.imageLink {
                             if let imageUrl = URL(string: image) {
@@ -27,8 +28,9 @@ struct AlbumsView: View {
                     }
                 }
             }
-            SearchBarView(onSearch: { text in
-                // TODO: Implement Search Functionality
+            
+            SearchBarView(onSearch: { queryText in
+                store.send(.queryAlbums(queryText))
             })
             .padding(.top, Padding.extraLarge * 3)
         }

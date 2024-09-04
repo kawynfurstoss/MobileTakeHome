@@ -15,11 +15,31 @@ struct AlbumsFeature {
         var isLoading: Bool = false
     }
     enum Action {
+        case queryAlbums(String)
+        case albumsQueried(Result<IdentifiedArrayOf<Album>, Error>)
     }
     
+    @Dependency(\.albumService) var albumService
     var body: some ReducerOf<Self> {
         Reduce<State, Action> { state, action in
             switch action {
+            case let .queryAlbums(query):
+                state.isLoading = true
+                return .run { send in
+                    do {
+                        let albums = try await albumService.queryAlbums(query)
+                        await send(.albumsQueried(.success(albums)))
+                    } catch {
+                        await send(.albumsQueried(.failure(error)))
+                    }
+                }
+            case let .albumsQueried(.success(albums)):
+                state.albums = albums
+                state.isLoading = false
+                return .none
+            case let .albumsQueried(.failure(error)):
+                state.isLoading = false
+                return .none
             }
         }
     }
