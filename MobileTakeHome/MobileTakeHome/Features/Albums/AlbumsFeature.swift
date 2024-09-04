@@ -12,6 +12,7 @@ struct AlbumsFeature {
     @ObservableState
     struct State: Equatable {
         var albums: IdentifiedArrayOf<Album>
+        var isLoading: Bool = false
     }
     enum Action {
     }

@@ -13,12 +13,16 @@ struct AlbumsView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            GeometryReader { geometry in
-                let width = geometry.size.width / 3
-                SquareGridView(items: store.albums.elements, columnWidth: width) { album in
-                    if let image = album.images.first?.imageLink {
-                        if let imageUrl = URL(string: image) {
-                            AsyncThumbnailView(url: imageUrl, width: width)
+            if store.isLoading {
+                ProgressView("Loading...")
+            } else {
+                GeometryReader { geometry in
+                    let width = geometry.size.width / 3
+                    SquareGridView(items: store.albums.elements, columnWidth: width) { album in
+                        if let image = album.images.first?.imageLink {
+                            if let imageUrl = URL(string: image) {
+                                AsyncThumbnailView(url: imageUrl, width: width)
+                            }
                         }
                     }
                 }
