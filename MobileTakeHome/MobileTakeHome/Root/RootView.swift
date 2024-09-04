@@ -25,7 +25,7 @@ struct RootView: View {
 
 #Preview {
     RootView(store: Store(
-        initialState: RootFeature.State(),
+        initialState: RootFeature.State(albums: AlbumsFeature.State(albums: AlbumsServiceMockData.mockData)),
         reducer: { RootFeature()}
     ))
 }

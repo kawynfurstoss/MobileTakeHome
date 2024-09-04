@@ -12,7 +12,7 @@ struct RootFeature {
     @ObservableState
     struct State: Equatable {
         var placeholder: String = "foo"
-        var albums = AlbumsFeature.State()
+        var albums: AlbumsFeature.State
     }
     enum Action {
         case buttonTapped

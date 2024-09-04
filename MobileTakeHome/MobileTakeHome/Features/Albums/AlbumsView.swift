@@ -13,8 +13,8 @@ struct AlbumsView: View {
 
     var body: some View {
         VStack {
-            ForEach(store.albums, id: \.self) { album in
-                Text(album)
+            ForEach(store.albums) { album in
+                Text(album.id)
                     .padding()
                     .background(Color.blue)
                     .cornerRadius(8)
@@ -26,7 +26,7 @@ struct AlbumsView: View {
 
 #Preview {
     AlbumsView(store: Store(
-        initialState: AlbumsFeature.State(),
+        initialState: AlbumsFeature.State(albums: AlbumsServiceMockData.mockData),
         reducer: { AlbumsFeature()}
     ))
 }

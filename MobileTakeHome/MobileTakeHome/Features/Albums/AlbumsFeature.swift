@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct AlbumsFeature {
     @ObservableState
     struct State: Equatable {
-        var albums: [String] = ["foo", "bar"]
+        var albums: IdentifiedArrayOf<Album>
     }
     enum Action {
     }
