@@ -12,25 +12,24 @@ struct SquareGridView<Item, Content>: View where Item: Identifiable, Content: Vi
     let items: [Item]
     let columns: Int
     let spacing: CGFloat
+    let columnWidth: CGFloat
     let content: (Item) -> Content
     
-    init(items: [Item], columns: Int = 3, spacing: CGFloat = Padding.none, @ViewBuilder content: @escaping (Item) -> Content) {
+    init(items: [Item], columns: Int = 3, spacing: CGFloat = Padding.none,columnWidth: CGFloat, @ViewBuilder content: @escaping (Item) -> Content) {
         self.items = items
         self.columns = columns
         self.spacing = spacing
+        self.columnWidth = columnWidth
         self.content = content
     }
     
     
     var body: some View {
-        GeometryReader { geometry in
-            let itemWidth = geometry.size.width/3
-            let numColumns = Array(repeating: GridItem(.fixed(itemWidth), spacing: spacing), count: columns)
-            ScrollView {
-                LazyVGrid(columns: numColumns, spacing: spacing) {
-                    ForEach(items) { item in
-                        content(item)
-                    }
+        let numColumns = Array(repeating: GridItem(.fixed(columnWidth), spacing: spacing), count: columns)
+        ScrollView {
+            LazyVGrid(columns: numColumns, spacing: spacing) {
+                ForEach(items) { item in
+                    content(item)
                 }
             }
         }
