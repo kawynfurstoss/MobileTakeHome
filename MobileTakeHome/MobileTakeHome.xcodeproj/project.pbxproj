@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6924CC652C88D63500CB9E7C /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC642C88D63500CB9E7C /* NetworkingClient.swift */; };
 		6924CC672C88D69000CB9E7C /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC662C88D69000CB9E7C /* APIEndpoint.swift */; };
+		6924CC692C88D8A800CB9E7C /* NetworkingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC682C88D8A800CB9E7C /* NetworkingErrors.swift */; };
 		69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */; };
 		69B5790B2C8827B3008A92C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790A2C8827B3008A92C6 /* Assets.xcassets */; };
 		69B5790E2C8827B3008A92C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790D2C8827B3008A92C6 /* Preview Assets.xcassets */; };
@@ -43,7 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6924CC642C88D63500CB9E7C /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		6924CC662C88D69000CB9E7C /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		6924CC682C88D8A800CB9E7C /* NetworkingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingErrors.swift; sourceTree = "<group>"; };
 		69B579032C8827B2008A92C6 /* MobileTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTakeHomeApp.swift; sourceTree = "<group>"; };
 		69B5790A2C8827B3008A92C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -357,11 +361,13 @@
 			files = (
 				69B579372C883C46008A92C6 /* RootFeature.swift in Sources */,
 				6924CC672C88D69000CB9E7C /* APIEndpoint.swift in Sources */,
+				6924CC692C88D8A800CB9E7C /* NetworkingErrors.swift in Sources */,
 				69B5794C2C8853CA008A92C6 /* AlbumImage.swift in Sources */,
 				69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */,
 				69B579472C88527E008A92C6 /* AlbumsService.swift in Sources */,
 				69B579432C884BA9008A92C6 /* AlbumsView.swift in Sources */,
 				69B5793C2C88470E008A92C6 /* CapsuleButton.swift in Sources */,
+				6924CC652C88D63500CB9E7C /* NetworkingClient.swift in Sources */,
 				69B579352C883C35008A92C6 /* RootView.swift in Sources */,
 				69B579412C884B98008A92C6 /* AlbumsFeature.swift in Sources */,
 				69B5794A2C885349008A92C6 /* Album.swift in Sources */,
