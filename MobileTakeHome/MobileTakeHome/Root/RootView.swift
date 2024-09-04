@@ -13,12 +13,8 @@ struct RootView: View {
 
     var body: some View {
         VStack {
-            CapsuleButton(
-                label: store.placeholder,
-                onTapped: {
-                    store.send(.buttonTapped)
-            })
             AlbumsView(store: store.scope(state: \.albums, action: \.albums))
+                .ignoresSafeArea()
         }
     }
 }

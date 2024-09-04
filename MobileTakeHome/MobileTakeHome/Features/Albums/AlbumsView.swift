@@ -12,7 +12,7 @@ struct AlbumsView: View {
     @Bindable var store: StoreOf<AlbumsFeature>
     
     var body: some View {
-        VStack {
+        ZStack(alignment: .top) {
             GeometryReader { geometry in
                 let width = geometry.size.width / 3
                 SquareGridView(items: store.albums.elements, columnWidth: width) { album in
@@ -23,6 +23,10 @@ struct AlbumsView: View {
                     }
                 }
             }
+            SearchBarView(onSearch: { text in
+                // TODO: Implement Search Functionality
+            })
+            .padding(.top, Padding.extraLarge * 3)
         }
     }
 }

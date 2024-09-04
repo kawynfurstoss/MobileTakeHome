@@ -32,6 +32,7 @@ struct SquareGridView<Item, Content>: View where Item: Identifiable, Content: Vi
                     content(item)
                 }
             }
+            .padding(.top, Padding.extraLarge * 5)
         }
     }
 }
