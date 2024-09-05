@@ -11,13 +11,9 @@ import ComposableArchitecture
 @main
 struct MobileTakeHomeApp: App {
     @State private var isDataLoaded = false
-    @State private var initialAlbums = IdentifiedArrayOf<Album>()
-    
-    /// Dependencies required on startup
-    @Dependency(\.albumService) var albumService
     
     @MainActor
-    static let store = Store(initialState: RootFeature.State(albums: AlbumsFeature.State()))
+    static let store = Store(initialState: RootFeature.State(albumsTab: AlbumsFeature.State(), favoritesTab: FavoritesFeature.State()))
     { RootFeature() }
     
     var body: some Scene {
@@ -27,7 +23,7 @@ struct MobileTakeHomeApp: App {
             } else {
                 ProgressView("Loading...") // Show a loading indicator
                     .task {
-                        Self.store.send(.albums(.queryAlbums("cats")))
+                        Self.store.send(.albumsTab(.queryAlbums("cats")))
                         isDataLoaded = true
                     }
             }
