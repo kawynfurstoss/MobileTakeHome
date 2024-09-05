@@ -21,20 +21,21 @@ struct AlbumsView: View {
                         ProgressView("Loading...")
                             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                     } else {
-                        SquareGridView(items: store.albums.elements, columnWidth: width) { album in
-                            if let image = album.images.first?.imageLink {
-                                if let imageUrl = URL(string: image) {
-                                    AsyncThumbnailView(url: imageUrl, width: width)
-                                        .onTapGesture {
-                                            withAnimation {
-                                                store.send(.albumTapped(album))
-                                                isBottomModalShowing = true
+                        if let albums = store.albums {
+                            SquareGridView(items: albums.elements, columnWidth: width) { album in
+                                if let image = album.images.first?.imageLink {
+                                    if let imageUrl = URL(string: image) {
+                                        AsyncThumbnailView(url: imageUrl, width: width)
+                                            .onTapGesture {
+                                                withAnimation {
+                                                    store.send(.albumTapped(album))
+                                                    isBottomModalShowing = true
+                                                }
                                             }
-                                        }
+                                    }
                                 }
                             }
                         }
-                        
                     }
                 }
                 SearchBarView(onSearch: { queryText in
@@ -50,9 +51,22 @@ struct AlbumsView: View {
                     }
                 }
             ) {
-                AlbumModal(album: store.selectedAlbum) {
-                    store.send(.navigateToAlbumGallery)
-                }
+                AlbumModal(
+                    album: store.selectedAlbum,
+                    isFavorite: store.isSelectedAlbumFavorite,
+                    onViewGalleryTapped: {
+                        store.send(.navigateToAlbumGallery)
+                    },
+                    onFavoriteTapped: { isFavorited in
+                        if let album = store.selectedAlbum {
+                            if isFavorited {
+                                store.send(.addAlbumToFavorites(album.id))
+                            } else {
+                                store.send(.removeAlbumFromFavorites(album.id))
+                            }
+                        }
+                    }
+                )
             }
             )
         }
