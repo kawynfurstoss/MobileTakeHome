@@ -25,6 +25,8 @@
 		6924CC8E2C89331100CB9E7C /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC8D2C89331100CB9E7C /* FavoriteButton.swift */; };
 		6924CC902C89548E00CB9E7C /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC8F2C89548E00CB9E7C /* Favorites.swift */; };
 		6924CC922C89579F00CB9E7C /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC912C89579F00CB9E7C /* FileStorage.swift */; };
+		6924CC952C896DA800CB9E7C /* FavoritesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC942C896DA800CB9E7C /* FavoritesFeature.swift */; };
+		6924CC972C896DB300CB9E7C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC962C896DB300CB9E7C /* FavoritesView.swift */; };
 		69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */; };
 		69B5790B2C8827B3008A92C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790A2C8827B3008A92C6 /* Assets.xcassets */; };
 		69B5790E2C8827B3008A92C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790D2C8827B3008A92C6 /* Preview Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		6924CC8D2C89331100CB9E7C /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		6924CC8F2C89548E00CB9E7C /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		6924CC912C89579F00CB9E7C /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		6924CC942C896DA800CB9E7C /* FavoritesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFeature.swift; sourceTree = "<group>"; };
+		6924CC962C896DB300CB9E7C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		69B579032C8827B2008A92C6 /* MobileTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTakeHomeApp.swift; sourceTree = "<group>"; };
 		69B5790A2C8827B3008A92C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +170,15 @@
 				6924CC832C89180B00CB9E7C /* AlbumModal.swift */,
 			);
 			path = Modals;
+			sourceTree = "<group>";
+		};
+		6924CC932C896D6D00CB9E7C /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				6924CC942C896DA800CB9E7C /* FavoritesFeature.swift */,
+				6924CC962C896DB300CB9E7C /* FavoritesView.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		69B578FA2C8827B2008A92C6 = {
@@ -265,6 +278,7 @@
 		69B5793E2C884B77008A92C6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				6924CC932C896D6D00CB9E7C /* Favorites */,
 				69B5793F2C884B82008A92C6 /* Albums */,
 			);
 			path = Features;
@@ -451,11 +465,13 @@
 				6924CC6F2C88E87700CB9E7C /* AlbumsResponse.swift in Sources */,
 				69B579432C884BA9008A92C6 /* AlbumsView.swift in Sources */,
 				6924CC822C8914A500CB9E7C /* BottomModal.swift in Sources */,
+				6924CC972C896DB300CB9E7C /* FavoritesView.swift in Sources */,
 				69B5793C2C88470E008A92C6 /* CapsuleButton.swift in Sources */,
 				6924CC652C88D63500CB9E7C /* NetworkingClient.swift in Sources */,
 				69B579352C883C35008A92C6 /* RootView.swift in Sources */,
 				6924CC6D2C88E7A700CB9E7C /* ImgurAPI.swift in Sources */,
 				69B579412C884B98008A92C6 /* AlbumsFeature.swift in Sources */,
+				6924CC952C896DA800CB9E7C /* FavoritesFeature.swift in Sources */,
 				6924CC712C88F13B00CB9E7C /* SquareGridView.swift in Sources */,
 				69B5794A2C885349008A92C6 /* Album.swift in Sources */,
 				6924CC862C891C5100CB9E7C /* AlbumGalleryView.swift in Sources */,
