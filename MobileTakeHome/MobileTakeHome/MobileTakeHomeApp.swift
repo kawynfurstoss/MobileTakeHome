@@ -16,20 +16,19 @@ struct MobileTakeHomeApp: App {
     /// Dependencies required on startup
     @Dependency(\.albumService) var albumService
     
+    @MainActor
+    static let store = Store(initialState: RootFeature.State(albums: AlbumsFeature.State()))
+    { RootFeature() }
+    
     var body: some Scene {
         WindowGroup {
             if isDataLoaded {
-                RootView(store: Store(initialState: RootFeature.State(albums: AlbumsFeature.State(albums: initialAlbums)))
-                         { RootFeature() })
+                RootView(store: Self.store)
             } else {
                 ProgressView("Loading...") // Show a loading indicator
                     .task {
-                        do {
-                            initialAlbums = try await albumService.queryAlbums("cats")
-                            isDataLoaded = true
-                        } catch {
-                            // TODO: Implement Error Handling
-                        }
+                        Self.store.send(.albums(.queryAlbums("cats")))
+                        isDataLoaded = true
                     }
             }
         }
