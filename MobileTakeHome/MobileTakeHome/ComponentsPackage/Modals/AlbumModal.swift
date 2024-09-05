@@ -30,11 +30,9 @@ struct AlbumModal: View {
                         .multilineTextAlignment(.leading)
                         .font(.title2)
                         .lineLimit(nil)
-                        .background(Color.gray.opacity(0.2))
                     if let description = album?.description {
                         Text(description)
                             .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure the text can expand to fit the container
-                            .background(Color.red.opacity(0.2))
                             .foregroundColor(.black)
                             .font(.title3)
                             .lineLimit(4)
@@ -42,7 +40,6 @@ struct AlbumModal: View {
 
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure the text can expand to fit the container
-                .background(Color.red.opacity(0.2))
                 Spacer()
                 FavoriteButton(isFavorite: isFavorite) { isFavorited in
                     onFavoriteTapped(isFavorited)
@@ -56,7 +53,6 @@ struct AlbumModal: View {
                 }
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             }
-            .background(Color.green.opacity(0.2))
             .padding(.bottom, Padding.large)
         }
     }
