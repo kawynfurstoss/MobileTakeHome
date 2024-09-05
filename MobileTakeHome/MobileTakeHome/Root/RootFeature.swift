@@ -11,24 +11,16 @@ import ComposableArchitecture
 struct RootFeature {
     @ObservableState
     struct State: Equatable {
-        var placeholder: String = "foo"
         var albums: AlbumsFeature.State
+        @Shared(.favorites) var favorites
     }
     enum Action {
-        case buttonTapped
         case albums(AlbumsFeature.Action)
     }
     
     var body: some ReducerOf<Self> {
         Reduce<State, Action> { state, action in
             switch action {
-            case .buttonTapped:
-                guard state.placeholder == "foo" else {
-                    state.placeholder = "foo"
-                    return .none
-                }
-                state.placeholder = "bar"
-                return .none
             case .albums(_):
                 return .none
             }
