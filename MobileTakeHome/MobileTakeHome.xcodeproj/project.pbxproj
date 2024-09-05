@@ -21,8 +21,10 @@
 		6924CC842C89180B00CB9E7C /* AlbumModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC832C89180B00CB9E7C /* AlbumModal.swift */; };
 		6924CC862C891C5100CB9E7C /* AlbumGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC852C891C5100CB9E7C /* AlbumGalleryView.swift */; };
 		6924CC882C891C5C00CB9E7C /* AlbumGalleryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC872C891C5C00CB9E7C /* AlbumGalleryFeature.swift */; };
+		6924CC8A2C89239000CB9E7C /* PinchToZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC892C89239000CB9E7C /* PinchToZoomView.swift */; };
 		6924CC8E2C89331100CB9E7C /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC8D2C89331100CB9E7C /* FavoriteButton.swift */; };
 		6924CC902C89548E00CB9E7C /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC8F2C89548E00CB9E7C /* Favorites.swift */; };
+		6924CC922C89579F00CB9E7C /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924CC912C89579F00CB9E7C /* FileStorage.swift */; };
 		69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */; };
 		69B5790B2C8827B3008A92C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790A2C8827B3008A92C6 /* Assets.xcassets */; };
 		69B5790E2C8827B3008A92C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B5790D2C8827B3008A92C6 /* Preview Assets.xcassets */; };
@@ -72,8 +74,10 @@
 		6924CC832C89180B00CB9E7C /* AlbumModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModal.swift; sourceTree = "<group>"; };
 		6924CC852C891C5100CB9E7C /* AlbumGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumGalleryView.swift; sourceTree = "<group>"; };
 		6924CC872C891C5C00CB9E7C /* AlbumGalleryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumGalleryFeature.swift; sourceTree = "<group>"; };
+		6924CC892C89239000CB9E7C /* PinchToZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchToZoomView.swift; sourceTree = "<group>"; };
 		6924CC8D2C89331100CB9E7C /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		6924CC8F2C89548E00CB9E7C /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		6924CC912C89579F00CB9E7C /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		69B579032C8827B2008A92C6 /* MobileTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTakeHomeApp.swift; sourceTree = "<group>"; };
 		69B5790A2C8827B3008A92C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				6924CC7E2C890A8D00CB9E7C /* FileType.swift */,
+				6924CC912C89579F00CB9E7C /* FileStorage.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				6924CC722C88F18D00CB9E7C /* SearchBarView.swift */,
 				6924CC702C88F13B00CB9E7C /* SquareGridView.swift */,
 				6924CC7B2C88FCCB00CB9E7C /* AsyncThumbnailView.swift */,
+				6924CC892C89239000CB9E7C /* PinchToZoomView.swift */,
 			);
 			path = ComponentsPackage;
 			sourceTree = "<group>";
@@ -432,9 +438,11 @@
 			files = (
 				69B579372C883C46008A92C6 /* RootFeature.swift in Sources */,
 				6924CC672C88D69000CB9E7C /* APIEndpoint.swift in Sources */,
+				6924CC922C89579F00CB9E7C /* FileStorage.swift in Sources */,
 				6924CC692C88D8A800CB9E7C /* NetworkingErrors.swift in Sources */,
 				6924CC882C891C5C00CB9E7C /* AlbumGalleryFeature.swift in Sources */,
 				6924CC7C2C88FCCB00CB9E7C /* AsyncThumbnailView.swift in Sources */,
+				6924CC8A2C89239000CB9E7C /* PinchToZoomView.swift in Sources */,
 				69B5794C2C8853CA008A92C6 /* AlbumImage.swift in Sources */,
 				6924CC732C88F18D00CB9E7C /* SearchBarView.swift in Sources */,
 				69B579072C8827B2008A92C6 /* MobileTakeHomeApp.swift in Sources */,
