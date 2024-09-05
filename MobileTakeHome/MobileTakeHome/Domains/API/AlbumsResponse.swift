@@ -7,6 +7,7 @@
 
 import IdentifiedCollections
 
+/// An object used for accessing `Album` data
 struct AlbumsResponse: Decodable {
     let albums: IdentifiedArrayOf<Album>
     

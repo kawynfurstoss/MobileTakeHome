@@ -8,6 +8,9 @@
 import Dependencies
 import IdentifiedCollections
 
+/// A service primarily used for querying and fetching albums
+///
+/// Acts as a bridge between the State layer of the user interface, (i.e. `Reducer` & `SwiftUI`) and the data source.
 @MainActor
 struct AlbumService {
     /// Returns an array of Albums.
@@ -31,7 +34,12 @@ struct AlbumService {
     var fetchRandomAlbums: @Sendable () async throws -> IdentifiedArrayOf<Album>
 }
 
+/// Conforms to the `DependencyKey` protocol.
+///
+/// Determines what value of `AlbumService` is used during specific builds
 extension AlbumService: DependencyKey {
+    
+    /// Used during simulator and device builds, makes an actual network request.
     static var liveValue: Self {
         @Dependency(\.networkingClient) var networkingClient
         return Self(
@@ -49,7 +57,7 @@ extension AlbumService: DependencyKey {
             })
     }
     
-    
+    /// Used during swiftUI preview builds [WIP].
     static let previewValue = Self(
         queryAlbums: { query in
             return AlbumsServiceMockData.mockData
@@ -58,12 +66,13 @@ extension AlbumService: DependencyKey {
             return AlbumsServiceMockData.mockData
         })
     
+    /// Used during unit and UI tests, can be overridden within the test to return expected value.
     static let testValue = Self(
         queryAlbums: unimplemented("AlbumService.queryAlbums"),
         fetchRandomAlbums: unimplemented("AlbumService.fetchInitialAlbums"))
 }
 
-
+/// An extension on `DependencyValues` in order to expose a computed property for the dependency
 extension DependencyValues {
     var albumService: AlbumService {
         get { self[AlbumService.self] }
@@ -71,6 +80,7 @@ extension DependencyValues {
     }
 }
 
+/// A mock data class containing data relevent to the return method `AlbumService.queryAlbums`
 class AlbumsServiceMockData {
     static var mockData: IdentifiedArrayOf<Album> {
         // Sample data

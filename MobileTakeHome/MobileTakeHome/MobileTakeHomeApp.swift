@@ -12,6 +12,7 @@ import ComposableArchitecture
 struct MobileTakeHomeApp: App {
     @State private var isDataLoaded = false
     
+    /// Creates a single instance of the `RootFeature` `Store`, initializing child `States` as well
     @MainActor
     static let store = Store(initialState: RootFeature.State(albumsTab: AlbumsFeature.State(), favoritesTab: FavoritesFeature.State()))
     { RootFeature() }
@@ -19,9 +20,11 @@ struct MobileTakeHomeApp: App {
     var body: some Scene {
         WindowGroup {
             if isDataLoaded {
+                /// Initial View of App
                 RootView(store: Self.store)
             } else {
-                ProgressView("Loading...") // Show a loading indicator
+                /// Perfoms any sort of start up tasks such as fetching data required before displaying app
+                ProgressView("Loading...")
                     .task {
                         Self.store.send(.albumsTab(.queryAlbums("cats")))
                         isDataLoaded = true

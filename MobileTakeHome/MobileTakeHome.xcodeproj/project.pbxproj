@@ -205,13 +205,13 @@
 			isa = PBXGroup;
 			children = (
 				6924CC7D2C890A7E00CB9E7C /* Utilities */,
-				6924CC632C88D5F200CB9E7C /* NetworkingPackage */,
-				69B579482C885301008A92C6 /* Models */,
 				69B579442C88521E008A92C6 /* Domains */,
+				69B579482C885301008A92C6 /* Models */,
 				69B5793E2C884B77008A92C6 /* Features */,
-				69B579382C8846BA008A92C6 /* ComponentsPackage */,
 				69B579332C883B70008A92C6 /* Root */,
 				69B579062C8827B2008A92C6 /* MobileTakeHomeApp.swift */,
+				69B579382C8846BA008A92C6 /* ComponentsPackage */,
+				6924CC632C88D5F200CB9E7C /* NetworkingPackage */,
 				69B5790A2C8827B3008A92C6 /* Assets.xcassets */,
 				69B5790C2C8827B3008A92C6 /* Preview Content */,
 			);
