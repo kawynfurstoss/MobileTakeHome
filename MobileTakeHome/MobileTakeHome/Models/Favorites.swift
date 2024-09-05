@@ -5,7 +5,9 @@
 //  Created by Kawyn Furstoss on 9/4/24.
 //
 
+import IdentifiedCollections
+
 struct Favorites: Codable, Equatable {
-    var albumFavorites: [String]
-    var imageFavorites: [String]
+    var albumFavorites: IdentifiedArrayOf<Album>
+    var imageFavorites: IdentifiedArrayOf<AlbumImage>
 }

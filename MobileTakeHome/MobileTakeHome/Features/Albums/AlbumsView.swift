@@ -43,6 +43,7 @@ struct AlbumsView: View {
                 })
                 .padding(.top, Padding.extraLarge * 3)
             }
+            .ignoresSafeArea()
             .modifier(BottomModalModifier(
                 shouldDisplay: $isBottomModalShowing,
                 onDismissed: {
@@ -60,9 +61,9 @@ struct AlbumsView: View {
                     onFavoriteTapped: { isFavorited in
                         if let album = store.selectedAlbum {
                             if isFavorited {
-                                store.send(.addAlbumToFavorites(album.id))
+                                store.send(.addAlbumToFavorites(album))
                             } else {
-                                store.send(.removeAlbumFromFavorites(album.id))
+                                store.send(.removeAlbumFromFavorites(album))
                             }
                         }
                     }

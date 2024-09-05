@@ -26,11 +26,11 @@ struct AlbumGalleryView: View {
                                 }
                                 HStack {
                                     Spacer()
-                                    FavoriteButton(isFavorite: store.favorites.imageFavorites.contains(where: { str in image.id == str })) { isFavorited in
+                                    FavoriteButton(isFavorite: store.favorites.imageFavorites.contains(where: { img in image == img })) { isFavorited in
                                         if isFavorited {
-                                            store.send(.imageAddedToFavorites(image.id))
+                                            store.send(.imageAddedToFavorites(image))
                                         } else {
-                                            store.send(.imageRemovedFromFavorites(image.id))
+                                            store.send(.imageRemovedFromFavorites(image))
                                         }
                                     }
                                 }

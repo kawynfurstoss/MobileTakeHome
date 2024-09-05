@@ -24,8 +24,8 @@ struct AlbumsFeature {
         case albumsQueried(Result<IdentifiedArrayOf<Album>, Error>)
         case albumTapped(Album)
         case navigateToAlbumGallery
-        case addAlbumToFavorites(String)
-        case removeAlbumFromFavorites(String)
+        case addAlbumToFavorites(Album)
+        case removeAlbumFromFavorites(Album)
         case destination(PresentationAction<Destination.Action>)
         case path(StackAction<Path.State, Path.Action>)
     }
@@ -53,7 +53,7 @@ struct AlbumsFeature {
                 return .none
             case let .albumTapped(album):
                 state.selectedAlbum = album
-                state.isSelectedAlbumFavorite = state.favorites.albumFavorites.contains(where: { str in album.id == str })
+                state.isSelectedAlbumFavorite = state.favorites.albumFavorites.contains(where: { albm in albm == album })
                 return .none
             case .navigateToAlbumGallery:
                 guard let album = state.selectedAlbum else {
@@ -65,13 +65,13 @@ struct AlbumsFeature {
                     return .none
             case .path:
                     return .none
-            case let .addAlbumToFavorites(id):
-                state.favorites.albumFavorites.append(id)
+            case let .addAlbumToFavorites(album):
+                state.favorites.albumFavorites.append(album)
                 state.isSelectedAlbumFavorite = true
                 return .none
-            case let .removeAlbumFromFavorites(id):
-                state.favorites.albumFavorites.removeAll(where: { str in
-                id == str
+            case let .removeAlbumFromFavorites(album):
+                state.favorites.albumFavorites.removeAll(where: { albm in
+                    albm == album
                 })
                 state.isSelectedAlbumFavorite = false
                 return .none
