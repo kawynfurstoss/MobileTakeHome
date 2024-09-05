@@ -26,7 +26,8 @@ struct BottomModalModifier<Modal>: ViewModifier where Modal: View {
                     VStack {
                         modal()
                     }
-                    .frame(height: 270)
+                    .padding(.bottom, Padding.extraLarge * 2)
+                    .frame(height: 320)
                     .foregroundColor(.white)
                     .background(Color.white)
                     .cornerRadius(25)
